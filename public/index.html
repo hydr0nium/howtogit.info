@@ -59,16 +59,16 @@
         <main>
             
     <h1 id="how-to-git">How to Git</h1>
-<p>You are probably here because one of your coworkers or friends has send you this page when you told them you know nothing about git. For you and anyone else that found their way here, this is the right place.</p>
+<p>You are probably here because one of your coworkers or friends has sent you this page when you told them you know nothing about git. For you and anyone else that found their way here, this is the right place.</p>
 <p>Let's start with the basics.</p>
 <h3 id="what-is-git-link">What is git? <a href="https://howtogit.info/#what-is-git-link">🔗</a></h3>
-<p>git is what is called a version control software, basically just a way to track what and who did something with files. git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.</p>
+<p>Git is what is called a version control software. It's easiest to think of it as a way to track 'what' and 'who' did something with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.</p>
 <h3 id="what-is-github-gitlab-link">What is GitHub / GitLab? <a href="https://howtogit.info/#what-is-github-gitlab-link">🔗</a></h3>
-<p>GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like pull-request and pipelines.</p>
+<p>GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like 'pull requests' and 'CI pipelines'.</p>
 <h3 id="what-is-a-repository-repo-link">What is a repository (repo)? <a href="https://howtogit.info/#what-is-a-repository-repo-link">🔗</a></h3>
 <p>A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. Are repo has always a .git folder in its root directory.</p>
 <h3 id="how-do-i-create-a-repo-link">How do I create a repo? <a href="https://howtogit.info/#how-do-i-create-a-repo-link">🔗</a></h3>
-<p>There are two ways to create a git repo. First on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.</p>
+<p>There are two ways to create a git repo. Either on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.</p>
 <h3 id="creating-a-repo-on-github-link">Creating a repo on GitHub <a href="https://howtogit.info/#creating-a-repo-on-github-link">🔗</a></h3>
 <p>To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions like, the name of the repo, or if it should be public the repository is created.</p>
 <h3 id="creating-a-repo-locally-link">Creating a repo locally <a href="https://howtogit.info/#creating-a-repo-locally-link">🔗</a></h3>
@@ -76,12 +76,12 @@
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> init .
 </span></code></pre>
 <h3 id="how-do-i-download-a-repo-from-github-gitlab-link">How do I download a repo from GitHub / GitLab? <a href="https://howtogit.info/#how-do-i-download-a-repo-from-github-gitlab-link">🔗</a></h3>
-<p>You can either just clone the repo from GitHub / GitLab which automatically connects the local and remote repo together. On GitHub you can do this with the blue 'Code' button. Then choose SSH or HTTPS (with HTTPS you can only pull but not push any changes). Note that SSH requires a ssh-key to be setup.</p>
+<p>You can just clone the repo from GitHub / GitLab which automatically connects the local and remote repo together. On GitHub you can do this with the blue 'Code' button. Then choose SSH or HTTPS (with HTTPS you can only pull but not push any changes). Note that SSH requires a ssh-key to be setup.</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/someuser/somerepo.git </span><span style="color:#65737e;"># Clone the repo to your local PC
 </span></code></pre>
 <h3 id="how-do-i-add-my-local-repo-to-the-remote-repo-link">How do I add my local repo to the remote repo? <a href="https://howtogit.info/#how-do-i-add-my-local-repo-to-the-remote-repo-link">🔗</a></h3>
-<p>If you created a local and a remote repo and you need to connect them you can follow the GitHub / GitLab instruction that are shown on the remote repo. For more information you can checkout <a href="https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link">this</a></p>
-<h3 id="how-do-i-add-a-ssh-key-link">How do I add a ssh-key? <a href="https://howtogit.info/#how-do-i-add-a-ssh-key-link">🔗</a></h3>
+<p>If you created a local and a remote repo and you need to connect them you can follow the GitHub / GitLab instruction that are shown on the remote repo. For more information you can look at <a href="https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link">this</a>.</p>
+<h3 id="how-do-i-add-an-ssh-key-link">How do I add an ssh-key? <a href="https://howtogit.info/#how-do-i-add-a-ssh-key-link">🔗</a></h3>
 <p>A ssh-key is a way to tell the remote server like GitHub or GitLab who you are. It uses something which is called public key cryptography. The setup varies from site to site and as such GitHub will be used as an example here.</p>
 <p>Setup the ssh keypair. To do this navigate (and/or create) the folder .ssh in your home folder (/home/yourusername in Linux, C:/Users/yourusername/ in Windows). Then run the following command in the terminal:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">ssh-keygen </span><span style="color:#65737e;"># Create a ssh private / public keypair
@@ -97,7 +97,7 @@
 </span></code></pre>
 <p>Now you should be good to go. If you need more information then you can follow <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">this link</a>.</p>
 <h3 id="how-do-i-use-git-link">How do I use git? <a href="https://howtogit.info/#how-do-i-use-git-link">🔗</a></h3>
-<p>To use git you first need to create a repo. All of the stuff that follows in this sections are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:</p>
+<p>To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> status
 </span></code></pre>
 <p>This will tell you what files have changed and how they changed. After that you need to add the changes to the staging area. There are basically two ways:</p>
@@ -113,7 +113,7 @@
 <p>After the changes are commited you can push them to the remote you added. This can be done with:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> push </span><span style="color:#65737e;"># This will push (send) your changes to the remote git repo
 </span></code></pre>
-<p>There might be some configuration you need to do before you can push like name and email. For this see <a href="https://howtogit.info/#configuring-git-link">here</a>.</p>
+<p>There might be some configuration you need to do before you can push, like setting a name and email. For this see <a href="https://howtogit.info/#configuring-git-link">here</a>.</p>
 <p>If you are collaborating with many people, others might push stuff that you don't have locally. To get the current changes that are at the remote repo you use the pull command:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> pull </span><span style="color:#65737e;"># Get the remote changes to your local repo
 </span></code></pre>
@@ -133,6 +133,11 @@
 <p>Can can also change to other branches with:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> checkout some_branch_name </span><span style="color:#65737e;"># Change branch to some_branch_name
 </span></code></pre>
+<p>You can also list all branches with:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> branch </span><span style="color:#65737e;"># List locally branches
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -r </span><span style="color:#65737e;"># List remote branches
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -a </span><span style="color:#65737e;"># List remote and local branches
+</span></code></pre>
 <p>Branches can also be merged together. Merging branches can be a bit confusing. For this see <a href="https://howtogit.info/#merging-branches-link">merging branches</a>.</p>
 <h3 id="merging-branches-link">Merging branches <a href="https://howtogit.info/#merging-branches-link">🔗</a></h3>
 <p>When merging branches git tries its best to merge the two branches together, but sometimes it just doens't know how to handle some merging. To merge a branch you will use:</p>
@@ -145,11 +150,11 @@
 </span><span>I love git.
 </span><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; my_awesome_branch
 </span></code></pre>
-<p>This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwanted change.</p>
+<p>This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuilt tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwanted change.</p>
 <pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>I love git.
 </span></code></pre>
 <p>After all merge conflicts are fixed, you need to add, commit and push them again.</p>
-<p>Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help checkout <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">the github help</a></p>
+<p>Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help, you can take a look at <a href="https://git-scm.com/book/ms/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts">the git documentation</a> for merge conflicts.</p>
 <h3 id="configuring-git-link">Configuring git <a href="https://howtogit.info/#configuring-git-link">🔗</a></h3>
 <p>git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add your email and your name you use the following two commands:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the repo you are in
@@ -160,7 +165,7 @@
 </span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
 </span></code></pre>
 <p><mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark></p>
-<p>Git can be configured to do a lot more. Here is for example my config:</p>
+<p>Git can be configured to do a lot more. Here is, for example, my config:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">[init]
 </span><span>	</span><span style="color:#bf616a;">defaultBranch</span><span> = main
 </span><span style="color:#bf616a;">[status]
@@ -186,10 +191,18 @@
 <h3 id="i-broke-my-repo-yelp-link">I broke my repo, YELP <a href="https://howtogit.info/#i-broke-my-repo-yelp-link">🔗</a></h3>
 <p>The good thing is if you use git with a remote repo then it's pretty hard to accidentally break it beyond repair. First off all make a backup of what you have locally. You don't want to break more than you already have. After the backup you can decide how to proceed. If you have no important changes or no changes at all you can try to delete your local repo and just pull it again. This will delete anything that was not pushed to the remote. Thats why we have a backup. If you have any important changes you still have the backup now and can just do some copy / paste action. If you are more advanced with git you might also be able to create a new branch, add the backup and merge the branch into the main branch. This should fix 99% of your problems. If you still have problems you should try Google and Stackexchange. In most cases someone, somewhere fucked it up too and asked a question about it. Good luck</p>
 <h3 id="i-pushed-sensitive-data-link">I pushed sensitive data ... <a href="https://howtogit.info/#i-pushed-sensitive-data-link">🔗</a></h3>
-<p>So you pushed a secret api key, your address, real name, what ever it is, it was sensitive. This is bad. In git, especially if you have pushed it to a remote repo it is notoriously hard to remove anything while keeping everything else. If it's something you can change like a password or API token, change it QUICKLY. If it is something like your address best bet you have is to delete it and create a new repo. There are other more non destructive ways but if you are non experienced this might be too difficult. <a href="https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github">StackOverflow - How to remove a commit from GitHub</a></p>
+<p>So you pushed a secret api key, your address, real name, what ever it is, it was sensitive. This is bad. In git, especially if you have pushed it to a remote repo it is notoriously hard to remove anything while keeping everything else. If it's something you can change like a password or API token, change it QUICKLY. If it is something like your address best bet you have is to delete it and create a new repo. There are other more non destructive ways but if you are not experienced this might be too difficult. <a href="https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github">StackOverflow - How to remove a commit from GitHub</a></p>
 <h3 id="pull-requests-link">Pull requests <a href="https://howtogit.info/#pull-requests-link">🔗</a></h3>
-<p>Pull requests sound similary to pulling but the two things a different. A pull request is NOT a git feature. It is aGitHub, GitLab, etc. feature. When visiting a public repo someone made you can 'fork' that repo. This just means you get a repo that you can edit even though you can't push to the repo directly. You can now edit your copy of that repo and then ask for it to be merged into the other ones repo to basically add your changes to them. This is a great way to collaborate because it allows anyone to add features, if the owner approves the pull request. A pull request can also be done in a collaberative project where multiple people have access to the same repo / project. Then you make a pull request for a branch you made and a project admin accepts or denies these changes.</p>
+<p>Pull requests sound similar to pulling but the two things a different. A pull request is NOT a git feature. It is a GitHub, GitLab, etc. feature. When visiting a public repo someone made you can 'fork' that repo. This just means you get a repo that you can edit even though you can't push to the repo directly. You can now edit your copy of that repo and then ask for it to be merged into the other person's repo to basically add your changes to them. This is a great way to collaborate because it allows anyone to add features, if the owner approves the pull request. A pull request can also be done in a collaberative project where multiple people have access to the same repo / project. Then you make a pull request for a branch you made and a project admin accepts or denies these changes.</p>
 <p><mark>It is generally a good idea to work on what is called feature branches, no matter if you make a pull request or work together at the same project. These feature branches get then merged into the projects main branch.</mark></p>
+<h3 id="more-information-link">More information <a href="https://howtogit.info/#more-information-link">🔗</a></h3>
+<p>For more information on the topic you can consult these sources:</p>
+<ul>
+<li><a href="https://git-scm.com/docs">Git Documentation</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Git Book (Online/Free)</a></li>
+<li><a href="https://docs.github.com/en">GitHub Documentation</a></li>
+<li><a href="https://docs.gitlab.com">GitLab Documentation</a></li>
+</ul>
 
 
     
