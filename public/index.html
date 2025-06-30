@@ -151,11 +151,14 @@
 <p>After all merge conflicts are fixed, you need to add, commit and push them again.</p>
 <p>Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help checkout <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">the github help</a></p>
 <h3 id="configuring-git-link">Configuring git <a href="https://howtogit.info/#configuring-git-link">🔗</a></h3>
-<p>git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add add email and name you use the following two commands:</p>
+<p>git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add your email and your name you use the following two commands:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the repo you are in
 </span><span style="color:#bf616a;">git</span><span> config user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
 </span></code></pre>
 <p>You can also add them globally for any repo that you are working on.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the repo you are in
+</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
+</span></code></pre>
 <p><mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark></p>
 <p>Git can be configured to do a lot more. Here is for example my config:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">[init]

@@ -134,13 +134,16 @@ After all merge conflicts are fixed, you need to add, commit and push them again
 Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help checkout [the github help](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
 
 ### Configuring git [🔗](https://howtogit.info/#configuring-git-link)
-git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add add email and name you use the following two commands:
+git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add your email and your name you use the following two commands:
 ```bash
 git config user.name "my name" # Adds your name to the repo you are in
 git config user.email "my_email@howtogit.info" # Adds your email to the repo you are in 
 ```
-You can also add them globally for any repo that you are working on. 
-
+You can also add them globally for any repo that you are working on.
+```bash
+git config --global user.name "my name" # Adds your name to the repo you are in
+git config --global user.email "my_email@howtogit.info" # Adds your email to the repo you are in 
+```
 
 <mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark>
 
