@@ -113,7 +113,7 @@ git checkout some_branch_name # Change branch to some_branch_name
 Branches can also be merged together. Merging branches can be a bit confusing. For this see [merging branches](https://howtogit.info/#merging-branches-link).
 
 ### Merging branches [🔗](https://howtogit.info/#merging-branches-link)
-When merging branches git tries its best to merge the two branches together, but sometimes it just don't know how to handle some merging. To merge a branch you will use:
+When merging branches git tries its best to merge the two branches together, but sometimes it just doens't know how to handle some merging. To merge a branch you will use:
 ```bash
 git merge some_branch_name # Merge some_branch_name into current branch
 ```
