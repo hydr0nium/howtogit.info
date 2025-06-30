@@ -94,7 +94,7 @@ git pull # Get the remote changes to your local repo
 ```
 This pull might result in a merge conflict. For more information see [this](https://howtogit.info/#merging-branches-link).
 
-The recommanded way of working with git is:
+The recommended way of working with git is:
 1. Pull changes from the remote repo
 2. Do what you need to
 3. Add and commit your changes regularely.
