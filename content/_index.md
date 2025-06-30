@@ -14,7 +14,7 @@ git is what is called a version control software, basically just a way to track 
 
 GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like pull-request and pipelines.
 
-### What is a repository (repo)? [🔗](https://howtogit.info/#what-is-a-repository-link)
+### What is a repository (repo)? [🔗](https://howtogit.info/#what-is-a-repository-repo-link)
 A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. Are repo has always a .git folder in its root directory.
 
 ### How do I create a repo? [🔗](https://howtogit.info/#how-do-i-create-a-repo-link)
