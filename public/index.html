@@ -145,8 +145,10 @@
 </span><span>I love git.
 </span><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; my_awesome_branch
 </span></code></pre>
-<p>This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers.
-After all merge conflicts are fixed, you need to add, commit and push them again.</p>
+<p>This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwant change.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>I love git.
+</span></code></pre>
+<p>After all merge conflicts are fixed, you need to add, commit and push them again.</p>
 <p>Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface if you need more help checkout <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">the github help</a></p>
 <h3 id="configuring-git-link">Configuring git <a href="https://howtogit.info/#configuring-git-link">🔗</a></h3>
 <p>git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add add email and name you use the following two commands:</p>
