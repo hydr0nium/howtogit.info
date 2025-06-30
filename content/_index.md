@@ -102,7 +102,7 @@ The recommended way of working with git is:
 5. Resolve possible merge conflicts.
 
 ### What is a branch? [🔗](https://howtogit.info/#what-is-a-branch-link)
-A git branch is like a different timeline for you files. When you create a new branch, your 'timeline' splits into two paths. You can choose to take any of the two paths to continue. To create a new branch you can use:
+A git branch is like a different timeline for you files. When you create a new branch, your current 'timeline' splits into two paths. You can choose to take any of the two paths to continue. To create a new branch you can use:
 ```bash
 git checkout -b new_branch_name # Create new branch with name 'new_branch_name'
 ```
