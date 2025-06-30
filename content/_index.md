@@ -125,7 +125,7 @@ I hate git.
 I love git.
 >>>>>>> my_awesome_branch
 ```
-This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwant change.
+This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwanted change.
 ```
 I love git.
 ```
