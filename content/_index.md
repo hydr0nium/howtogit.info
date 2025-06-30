@@ -75,7 +75,7 @@ or
 ```bash
 git add . # This will add all changed files.
 ```
-Now that the files are in the staging area they are ready to be commited. Commiting means that the changes will be added to the current [branch](https://howtogit.info/#what-is-a-branch-link). You every commit you also need to add a message while commiting the changes:
+Now that the files are in the staging area they are ready to be commited. Commiting means that the changes will be added to the current [branch](https://howtogit.info/#what-is-a-branch-link). For every commit you also need to add a message while commiting the changes:
 ```bash
 git commit -m "Hey this is a cool commit message"
 ```
