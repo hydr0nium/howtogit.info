@@ -2,23 +2,23 @@
 +++
 # How to Git
 
-You are probably here because one of your coworkers or friends has send you this page when you told them you know nothing about git. For you and anyone else that found their way here, this is the right place.
+You are probably here because one of your coworkers or friends has sent you this page when you told them you know nothing about git. For you and anyone else that found their way here, this is the right place.
 
 Let's start with the basics.
 
 ### What is git? [🔗](https://howtogit.info/#what-is-git-link)
 
-git is what is called a version control software, basically just a way to track what and who did something with files. git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.
+Git is what is called a version control software. It's easiest to think of it as a way to track 'what' and 'who' did something with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.
 
 ### What is GitHub / GitLab? [🔗](https://howtogit.info/#what-is-github-gitlab-link)
 
-GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like pull-request and pipelines.
+GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like 'pull requests' and 'CI pipelines'.
 
 ### What is a repository (repo)? [🔗](https://howtogit.info/#what-is-a-repository-repo-link)
 A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. Are repo has always a .git folder in its root directory.
 
 ### How do I create a repo? [🔗](https://howtogit.info/#how-do-i-create-a-repo-link)
-There are two ways to create a git repo. First on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.
+There are two ways to create a git repo. Either on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.
 
 ### Creating a repo on GitHub [🔗](https://howtogit.info/#creating-a-repo-on-github-link) 
 To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions like, the name of the repo, or if it should be public the repository is created.
@@ -30,15 +30,15 @@ git init .
 ```
 
 ### How do I download a repo from GitHub / GitLab? [🔗](https://howtogit.info/#how-do-i-download-a-repo-from-github-gitlab-link)
-You can either just clone the repo from GitHub / GitLab which automatically connects the local and remote repo together. On GitHub you can do this with the blue 'Code' button. Then choose SSH or HTTPS (with HTTPS you can only pull but not push any changes). Note that SSH requires a ssh-key to be setup. 
+You can just clone the repo from GitHub / GitLab which automatically connects the local and remote repo together. On GitHub you can do this with the blue 'Code' button. Then choose SSH or HTTPS (with HTTPS you can only pull but not push any changes). Note that SSH requires a ssh-key to be setup. 
 ```bash
 git clone https://github.com/someuser/somerepo.git # Clone the repo to your local PC
 ```
 
 ### How do I add my local repo to the remote repo? [🔗](https://howtogit.info/#how-do-i-add-my-local-repo-to-the-remote-repo-link)
-If you created a local and a remote repo and you need to connect them you can follow the GitHub / GitLab instruction that are shown on the remote repo. For more information you can checkout [this](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link)
+If you created a local and a remote repo and you need to connect them you can follow the GitHub / GitLab instruction that are shown on the remote repo. For more information you can look at [this](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link).
 
-### How do I add a ssh-key? [🔗](https://howtogit.info/#how-do-i-add-a-ssh-key-link)
+### How do I add an ssh-key? [🔗](https://howtogit.info/#how-do-i-add-a-ssh-key-link)
 A ssh-key is a way to tell the remote server like GitHub or GitLab who you are. It uses something which is called public key cryptography. The setup varies from site to site and as such GitHub will be used as an example here.
 
 
@@ -63,7 +63,7 @@ Host github.com
 Now you should be good to go. If you need more information then you can follow [this link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 ### How do I use git? [🔗](https://howtogit.info/#how-do-i-use-git-link)
-To use git you first need to create a repo. All of the stuff that follows in this sections are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:
+To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:
 ```bash
 git status
 ```
@@ -86,7 +86,7 @@ After the changes are commited you can push them to the remote you added. This c
 ```bash
 git push # This will push (send) your changes to the remote git repo
 ```
-There might be some configuration you need to do before you can push like name and email. For this see [here](https://howtogit.info/#configuring-git-link).
+There might be some configuration you need to do before you can push, like setting a name and email. For this see [here](https://howtogit.info/#configuring-git-link).
 
 If you are collaborating with many people, others might push stuff that you don't have locally. To get the current changes that are at the remote repo you use the pull command:
 ```bash
@@ -110,6 +110,12 @@ Can can also change to other branches with:
 ```bash
 git checkout some_branch_name # Change branch to some_branch_name
 ```
+You can also list all branches with:
+```bash
+git branch # List locally branches
+git branch -r # List remote branches
+git branch -a # List remote and local branches
+```
 Branches can also be merged together. Merging branches can be a bit confusing. For this see [merging branches](https://howtogit.info/#merging-branches-link).
 
 ### Merging branches [🔗](https://howtogit.info/#merging-branches-link)
@@ -125,13 +131,13 @@ I hate git.
 I love git.
 >>>>>>> my_awesome_branch
 ```
-This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuild tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwanted change.
+This will show you what the current content (HEAD - 'I hate git.') and other content (my_awesome_branch / 'I love git.') is. To solve the conflict you can either use the inbuilt tools in the editor or IDE, or just edit the file, choosing one of the changes and removing the merge conflict markers, as well as the unwanted change.
 ```
 I love git.
 ```
 After all merge conflicts are fixed, you need to add, commit and push them again.
 
-Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help checkout [the github help](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
+Handling a lot of merge conflics can get out of hand quickly so using a good IDE or editor for handling these conflics in the beginning is recommended. Merge conflicts are a big topic and this only scratches the surface. If you need more help, you can take a look at [the git documentation](https://git-scm.com/book/ms/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts) for merge conflicts.
 
 ### Configuring git [🔗](https://howtogit.info/#configuring-git-link)
 git can be configured to do a lot of cool stuff. You can even add your own custom git commands. The most basic configuration most people need to deal with are name and email, as git requires them when you work with a remote repo. To add your email and your name you use the following two commands:
@@ -147,7 +153,7 @@ git config --global user.email "my_email@howtogit.info" # Adds your email to the
 
 <mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark>
 
-Git can be configured to do a lot more. Here is for example my config:
+Git can be configured to do a lot more. Here is, for example, my config:
 ```bash
 [init]
 	defaultBranch = main
@@ -178,13 +184,21 @@ The good thing is if you use git with a remote repo then it's pretty hard to acc
 
 
 ### I pushed sensitive data ... [🔗](https://howtogit.info/#i-pushed-sensitive-data-link)
-So you pushed a secret api key, your address, real name, what ever it is, it was sensitive. This is bad. In git, especially if you have pushed it to a remote repo it is notoriously hard to remove anything while keeping everything else. If it's something you can change like a password or API token, change it QUICKLY. If it is something like your address best bet you have is to delete it and create a new repo. There are other more non destructive ways but if you are non experienced this might be too difficult. [StackOverflow - How to remove a commit from GitHub](https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github)
+So you pushed a secret api key, your address, real name, what ever it is, it was sensitive. This is bad. In git, especially if you have pushed it to a remote repo it is notoriously hard to remove anything while keeping everything else. If it's something you can change like a password or API token, change it QUICKLY. If it is something like your address best bet you have is to delete it and create a new repo. There are other more non destructive ways but if you are not experienced this might be too difficult. [StackOverflow - How to remove a commit from GitHub](https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github)
 
 
 ### Pull requests [🔗](https://howtogit.info/#pull-requests-link)
-Pull requests sound similary to pulling but the two things a different. A pull request is NOT a git feature. It is aGitHub, GitLab, etc. feature. When visiting a public repo someone made you can 'fork' that repo. This just means you get a repo that you can edit even though you can't push to the repo directly. You can now edit your copy of that repo and then ask for it to be merged into the other ones repo to basically add your changes to them. This is a great way to collaborate because it allows anyone to add features, if the owner approves the pull request. A pull request can also be done in a collaberative project where multiple people have access to the same repo / project. Then you make a pull request for a branch you made and a project admin accepts or denies these changes. 
+Pull requests sound similar to pulling but the two things a different. A pull request is NOT a git feature. It is a GitHub, GitLab, etc. feature. When visiting a public repo someone made you can 'fork' that repo. This just means you get a repo that you can edit even though you can't push to the repo directly. You can now edit your copy of that repo and then ask for it to be merged into the other person's repo to basically add your changes to them. This is a great way to collaborate because it allows anyone to add features, if the owner approves the pull request. A pull request can also be done in a collaberative project where multiple people have access to the same repo / project. Then you make a pull request for a branch you made and a project admin accepts or denies these changes. 
 
 <mark>It is generally a good idea to work on what is called feature branches, no matter if you make a pull request or work together at the same project. These feature branches get then merged into the projects main branch.</mark>
+
+
+### More information [🔗](https://howtogit.info/#more-information-link)
+For more information on the topic you can consult these sources:
+- [Git Documentation](https://git-scm.com/docs)
+- [Git Book (Online/Free)](https://git-scm.com/book/en/v2)
+- [GitHub Documentation](https://docs.github.com/en)
+- [GitLab Documentation](https://docs.gitlab.com)
 
 
 
