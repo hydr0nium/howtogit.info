@@ -46,3 +46,8 @@ git checkout some_branch # Switches to branch with name some_branch
 
 git merge some_branch # Merge some_branch into current branch
 ```
+
+### More languages
+
+- [German - Deutsch](https://howtogit.info/de/tldr/)
+
