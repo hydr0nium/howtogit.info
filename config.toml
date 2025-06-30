@@ -20,6 +20,7 @@ title = "How to Git?"
 [extra]
 # Put all your custom variables here
 header_nav = [
+{url = "https://github.com/hydr0nium", name_en = "whoami", name_de = "whoami"},
 {url = "/de", name_en = "de", name_de = "de"},
 {url = "/", name_en = "en", name_de = "en"}
 ]
