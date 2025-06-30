@@ -44,6 +44,11 @@
                 en
             </a>
             
+            <a href="&#x2F;tldr" class="">
+                
+                tldr;
+            </a>
+            
 
             <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
                 data-icon-base="https://howtogit.info/icons.svg"
@@ -134,7 +139,7 @@
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> checkout some_branch_name </span><span style="color:#65737e;"># Change branch to some_branch_name
 </span></code></pre>
 <p>You can also list all branches with:</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> branch </span><span style="color:#65737e;"># List locally branches
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> branch </span><span style="color:#65737e;"># List local branches
 </span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -r </span><span style="color:#65737e;"># List remote branches
 </span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -a </span><span style="color:#65737e;"># List remote and local branches
 </span></code></pre>
@@ -161,8 +166,8 @@
 </span><span style="color:#bf616a;">git</span><span> config user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
 </span></code></pre>
 <p>You can also add them globally for any repo that you are working on.</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the repo you are in
-</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the global config
+</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the global config
 </span></code></pre>
 <p><mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark></p>
 <p>Git can be configured to do a lot more. Here is, for example, my config:</p>

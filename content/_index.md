@@ -112,7 +112,7 @@ git checkout some_branch_name # Change branch to some_branch_name
 ```
 You can also list all branches with:
 ```bash
-git branch # List locally branches
+git branch # List local branches
 git branch -r # List remote branches
 git branch -a # List remote and local branches
 ```
@@ -147,8 +147,8 @@ git config user.email "my_email@howtogit.info" # Adds your email to the repo you
 ```
 You can also add them globally for any repo that you are working on.
 ```bash
-git config --global user.name "my name" # Adds your name to the repo you are in
-git config --global user.email "my_email@howtogit.info" # Adds your email to the repo you are in 
+git config --global user.name "my name" # Adds your name to the global config
+git config --global user.email "my_email@howtogit.info" # Adds your email to the global config
 ```
 
 <mark>IMPORTANT: Anyone with access to the repo can see your name and email.</mark>

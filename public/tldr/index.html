@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://howtogit.info/rss.xml">
+        
+        <title>How to Git?</title>
+
+				<!-- Custom Tag for Mastodon --!>
+				<link rel="me" href="https://infosec.exchange/@hydr0nium">
+
+        <link rel="preload" href="https://howtogit.info/css/style.css" as="style">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/reset-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://raw.githack.com/Speyll/suCSS/main/suCSS-min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://howtogit.info/css/style.css">
+        <link rel="stylesheet" href="https://howtogit.info/css/custom.css">
+
+        <!-- Add favicon with appropriate sizes -->
+        <link rel="icon" href="https:&#x2F;&#x2F;howtogit.info/Git-Icon-1788C.png">
+        
+    </head>
+    <body>
+        
+        
+        
+        
+        <nav id="nav-bar">
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;hydr0nium" class="">
+                
+                whoami
+            </a>
+            
+            <a href="&#x2F;de" class="">
+                
+                de
+            </a>
+            
+            <a href="&#x2F;" class="">
+                
+                en
+            </a>
+            
+            <a href="&#x2F;tldr" class="">
+                
+                tldr;
+            </a>
+            
+
+            <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
+                data-icon-base="https://howtogit.info/icons.svg"
+                data-icon-dark="#darkMode"
+                data-icon-light="#lightMode"
+                data-sound-src="https://howtogit.info/click.ogg">
+                <svg class="icon">
+                    <use id="theme-icon"></use>
+                </svg>
+            </div>
+        </nav>
+
+        <main>
+            
+<article class="post">
+    <header class="post-header">
+        
+
+        
+
+        <h1></h1>
+    </header>
+
+
+
+    <div class="post-content">
+        <h1 id="git-tldr">Git TLDR;</h1>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Basics
+</span><span style="color:#bf616a;">git</span><span> init . </span><span style="color:#65737e;"># Init git repo in current directory
+</span><span style="color:#bf616a;">git</span><span> clone some_repo_url </span><span style="color:#65737e;"># Clone remote repo
+</span><span style="color:#bf616a;">git</span><span> pull </span><span style="color:#65737e;"># Get changes from remote
+</span><span style="color:#bf616a;">git</span><span> status </span><span style="color:#65737e;"># Show changes
+</span><span style="color:#bf616a;">git</span><span> add . </span><span style="color:#65737e;"># Add changes to staging area
+</span><span style="color:#bf616a;">git</span><span> add path_to_file1 path_to_file2 path_to_file3 </span><span style="color:#65737e;"># Add only the specified files to the staging area
+</span><span style="color:#bf616a;">git</span><span> commit</span><span style="color:#bf616a;"> -m </span><span>&quot;</span><span style="color:#a3be8c;">message</span><span>&quot; </span><span style="color:#65737e;"># Commit and add commit message
+</span><span style="color:#bf616a;">git</span><span> push </span><span style="color:#65737e;"># Push changes to remote repo
+</span><span>
+</span><span style="color:#65737e;"># Setup SSH keys:
+</span><span style="color:#bf616a;">ssh-keygen </span><span style="color:#65737e;"># Create keypair
+</span><span>
+</span><span style="color:#65737e;"># Basic ssh config file for GitHub
+</span><span style="color:#bf616a;">Host</span><span> github.com
+</span><span>    </span><span style="color:#bf616a;">HostName</span><span> github.com
+</span><span>    </span><span style="color:#bf616a;">User</span><span> git
+</span><span>    </span><span style="color:#bf616a;">IdentityFile</span><span> path_to_your_private_key_not_the_pub_file
+</span><span>    </span><span style="color:#bf616a;">IdentitiesOnly</span><span> yes
+</span><span>
+</span><span style="color:#65737e;"># Setup Name and Email
+</span><span style="color:#bf616a;">git</span><span> config user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name to the repo you are in
+</span><span style="color:#bf616a;">git</span><span> config user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the repo you are in 
+</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.name &quot;</span><span style="color:#a3be8c;">my name</span><span>&quot; </span><span style="color:#65737e;"># Adds your name the global config
+</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">my_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Adds your email to the global config
+</span><span>
+</span><span style="color:#65737e;"># Merging
+</span><span style="color:#bf616a;">git</span><span> merge some_branch </span><span style="color:#65737e;"># Merge some_branch into current branch
+</span><span>
+</span><span style="color:#65737e;"># Branches
+</span><span style="color:#bf616a;">git</span><span> branch </span><span style="color:#65737e;"># List local branches
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -r </span><span style="color:#65737e;"># List remote branches
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -a </span><span style="color:#65737e;"># List all branches
+</span><span style="color:#bf616a;">git</span><span> checkout</span><span style="color:#bf616a;"> -b</span><span> new_branch </span><span style="color:#65737e;"># Create branch with name new_branch
+</span><span style="color:#bf616a;">git</span><span> checkout some_branch </span><span style="color:#65737e;"># Switches to branch with name some_branch
+</span></code></pre>
+
+    </div>
+
+    
+</article>
+
+        </main>
+
+        <footer>
+            <hr>
+<div id="footer-container">
+    <p>Made using <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a> Zola theme</p>
+</div>
+
+        </footer>
+
+        <!-- Move JS to end of body and add defer -->
+        <script src="https://howtogit.info/js/script.js" defer></script>
+    </body>
+</html>
