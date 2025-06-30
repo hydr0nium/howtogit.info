@@ -23,7 +23,7 @@ There are two ways to create a git repo. First on GitHub or GitLab and then loca
 ### Creating a repo on GitHub [🔗](https://howtogit.info/#creating-a-repo-on-github-link) 
 To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions like, the name of the repo, or if it should be public the repository is created.
 
-### Creating a repo locally [🔗](https://howtogit.info/#creating-a-repo-locally)
+### Creating a repo locally [🔗](https://howtogit.info/#creating-a-repo-locally-link)
 To create a git repo locally navigate to the folder you want to create the repo in then run
 ```bash
 git init .
