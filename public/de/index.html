@@ -63,7 +63,28 @@
 
         <main>
             
-    <p>WIP</p>
+    <h1 id="wie-funktionert-git">Wie funktionert Git</h1>
+<p>Du bist wahrscheinlich hier weil einer deiner Arbeitskollegen oder Freunde dir diese Seite geschickt hast, als du ihnen erzählt hast, dass du nichts über git weißt. Für dich und jeden anderen, der diese Seite gefunden hat, ist dies der richtige Platz.</p>
+<h3 id="was-ist-git-link">Was ist git? <a href="https://howtogit.info/de/#was-ist-git-link">🔗</a></h3>
+<p>Git ist was man eine Version-Kontroll-Software nennt. Am einfachsten ist es sich git als einen Weg zu speichern 'was' und 'wer' etwas mit einer Datei gemacht hat. Git ist in erster Linie eine Kommandozeilenanwendungen, kann aber auch oft in deinem lieblings Codeeditor oder IDE wie VSCode benutzt werden. Es ist wichtig zwischen GitHub, GitLab und git zu unterscheiden, da diese 3 verschiedene Dinge sind, obwohl sie ähnliche Namen haben.</p>
+<h3 id="was-ist-github-gitlab-link">Was ist GitHub / GitLab? <a href="https://howtogit.info/de/#was-ist-github-gitlab-link">🔗</a></h3>
+<p>GitHub und GitLab sind Speicherorte im Internet für deine git verwalteten Dateien. Sie bieten einige erweiterte Funktionen zu git welche Leuten helfen besser zusammen zu arbeiten, wie 'pull requests' oder 'CI pipelines'.</p>
+<h3 id="was-sind-repositories-link">Was sind repositories? <a href="https://howtogit.info/de/#was-sind-repositories-link">🔗</a></h3>
+<p>Ein repository, kurz repo, (deutsch: Lagerstätte oder Behälter) ist kurz und knapp nur ein Ordner in welchem deine Dateien verarbeitet werden. Du kannst dir das ganze als eine Box vorstellen wo deine Dateien drin 'leben'. Ein repo hat immer einen .git Ordner in sich.</p>
+<h3 id="wie-erstelle-ich-ein-repo-link">Wie erstelle ich ein repo? <a href="https://howtogit.info/de/#wie-erstelle-ich-ein-repo-link">🔗</a></h3>
+<p>Es gibt zwei Wege um ein git repo zu erstellen. Entweder auf GitHub / GitLab oder lokal. In beiden Fällen musst du beiden verknüfen, falls du den Dienste von GitHub / GitLab benutzen willst.</p>
+<h3 id="ein-repo-auf-github-erstellen-link">Ein Repo auf GitHub erstellen <a href="https://howtogit.info/de/#ein-repo-auf-github-erstellen-link">🔗</a></h3>
+<p>Um ein repo auf GitHub zu erstellen klickst du auf das '+' oben rechts und dann 'New repository'. Danach stellt GitHub dir einige Fragen wie zum Beispiel den Namen des repos oder ob dies öffentlich erreichbar sein soll.</p>
+<h3 id="wie-erstelle-ich-ein-lokales-repo-link">Wie erstelle ich ein lokales Repo? <a href="https://howtogit.info/de/#wie-erstelle-ich-ein-lokales-repo-link">🔗</a></h3>
+<p>Um ein lokales Repo zu erstellen navigiere zuerst in den Ordner in dem du dein repo anlegen willst. Dann führe folgenden Befehl in der Kommandozeile aus:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> init .
+</span></code></pre>
+<h3 id="wie-lade-ich-ein-repo-von-github-gitlab-herunter-link">Wie lade ich ein repo von GitHub / GitLab herunter? <a href="https://howtogit.info/de/#wie-lade-ich-ein-repo-von-github-gitlab-herunter-link">🔗</a></h3>
+<p>Du kannst ein repo von GitHub oder Gitlab ganz einfache mit dem clone Kommando herunterladen. Dies verbindet automatische deine lokale 'Kopie' mit der auf GitHub / GitLab gespeicherten. Um den clone Befehl ausführen zu können benötigtst du eine repo URL. Diese findest du auf GitHub in dem jeweiligen Repo bei dem blauen Knopf 'Code'. Du kannst hier SHH oder HTTPS auswählen. Bedenke jedoch, dass SSH einen SSH-Schlüssel benötigt und HTTPS nur lesen und nicht schreiben kann.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/someuser/somerepo.git
+</span></code></pre>
+<h3 id="wie-verbinde-ich-mein-lokales-repo-mit-dem-repo-auf-github-link">Wie verbinde ich mein lokales Repo mit dem Repo auf GitHub? <a href="https://howtogit.info/de/#wie-verbinde-ich-mein-lokales-repo-mit-dem-repo-auf-github-link">🔗</a></h3>
+<p>Wenn du ein zuerst ein lokales repo und danach ein repo auf GitHub erstellst musst du diese beiden verbinden. Dein GitHub / GitLab repo sollte dir genaue Anweisungen nach erstellen geben um dies zu tun. Falls du jedoch mehr Informationen benötigst kannst du <a href="https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link">diesem</a> Link folgen.</p>
 
 
     

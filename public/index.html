@@ -67,15 +67,15 @@
 <p>You are probably here because one of your coworkers or friends has sent you this page when you told them you know nothing about git. For you and anyone else that found their way here, this is the right place.</p>
 <p>Let's start with the basics.</p>
 <h3 id="what-is-git-link">What is git? <a href="https://howtogit.info/#what-is-git-link">🔗</a></h3>
-<p>Git is what is called a version control software. It's easiest to think of it as a way to track 'what' and 'who' did something with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.</p>
+<p>Git is what is called a version control software. It's easiest to think of it as a way to track 'who' did 'what' with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.</p>
 <h3 id="what-is-github-gitlab-link">What is GitHub / GitLab? <a href="https://howtogit.info/#what-is-github-gitlab-link">🔗</a></h3>
 <p>GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like 'pull requests' and 'CI pipelines'.</p>
 <h3 id="what-is-a-repository-repo-link">What is a repository (repo)? <a href="https://howtogit.info/#what-is-a-repository-repo-link">🔗</a></h3>
-<p>A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. Are repo has always a .git folder in its root directory.</p>
+<p>A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. A repo always has a .git folder in its root directory.</p>
 <h3 id="how-do-i-create-a-repo-link">How do I create a repo? <a href="https://howtogit.info/#how-do-i-create-a-repo-link">🔗</a></h3>
-<p>There are two ways to create a git repo. Either on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.</p>
+<p>There are two ways to create a git repo. Either on GitHub / GitLab or locally. In both cases you need to somehow 'connect' your local repo to the remote repo if you want to store your files online or collaborate with others on a project.</p>
 <h3 id="creating-a-repo-on-github-link">Creating a repo on GitHub <a href="https://howtogit.info/#creating-a-repo-on-github-link">🔗</a></h3>
-<p>To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions like, the name of the repo, or if it should be public the repository is created.</p>
+<p>To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions,  for example what you want to name the repo, or if it should be public, the repository is created.</p>
 <h3 id="creating-a-repo-locally-link">Creating a repo locally <a href="https://howtogit.info/#creating-a-repo-locally-link">🔗</a></h3>
 <p>To create a git repo locally navigate to the folder you want to create the repo in then run</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> init .
@@ -102,7 +102,7 @@
 </span></code></pre>
 <p>Now you should be good to go. If you need more information then you can follow <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">this link</a>.</p>
 <h3 id="how-do-i-use-git-link">How do I use git? <a href="https://howtogit.info/#how-do-i-use-git-link">🔗</a></h3>
-<p>To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:</p>
+<p>To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change you make in the files is tracked by git. You can see the changes with:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> status
 </span></code></pre>
 <p>This will tell you what files have changed and how they changed. After that you need to add the changes to the staging area. There are basically two ways:</p>
@@ -145,7 +145,7 @@
 </span></code></pre>
 <p>Branches can also be merged together. Merging branches can be a bit confusing. For this see <a href="https://howtogit.info/#merging-branches-link">merging branches</a>.</p>
 <h3 id="merging-branches-link">Merging branches <a href="https://howtogit.info/#merging-branches-link">🔗</a></h3>
-<p>When merging branches git tries its best to merge the two branches together, but sometimes it just doens't know how to handle some merging. To merge a branch you will use:</p>
+<p>When merging branches git tries its best to merge the two branches together, but sometimes it just doesn't know how to handle some merging. To merge a branch you will use:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> merge some_branch_name </span><span style="color:#65737e;"># Merge some_branch_name into current branch
 </span></code></pre>
 <p>This can result in something which is known as a merge conflict. Merge conflicts look like this in the file:</p>

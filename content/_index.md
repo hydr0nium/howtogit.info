@@ -8,20 +8,20 @@ Let's start with the basics.
 
 ### What is git? [🔗](https://howtogit.info/#what-is-git-link)
 
-Git is what is called a version control software. It's easiest to think of it as a way to track 'what' and 'who' did something with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.
+Git is what is called a version control software. It's easiest to think of it as a way to track 'who' did 'what' with files. Git first and foremost is a commandline tool but it can often be used in your favorite code editor or IDE like VSCode. It is important to note that git is different from GitHub and GitLab.
 
 ### What is GitHub / GitLab? [🔗](https://howtogit.info/#what-is-github-gitlab-link)
 
 GitHub and GitLab are cloud storages for your git managed files. They have some features that enhance the way people can collaborate like 'pull requests' and 'CI pipelines'.
 
 ### What is a repository (repo)? [🔗](https://howtogit.info/#what-is-a-repository-repo-link)
-A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. Are repo has always a .git folder in its root directory.
+A repository or repo for short is just the directory your files are managed in. You can think of it as the box all your files / code live in. A repo always has a .git folder in its root directory.
 
 ### How do I create a repo? [🔗](https://howtogit.info/#how-do-i-create-a-repo-link)
-There are two ways to create a git repo. Either on GitHub or GitLab and then locally. In both cases you need to somehow 'connect' your local repo to the remote repo.
+There are two ways to create a git repo. Either on GitHub / GitLab or locally. In both cases you need to somehow 'connect' your local repo to the remote repo if you want to store your files online or collaborate with others on a project.
 
 ### Creating a repo on GitHub [🔗](https://howtogit.info/#creating-a-repo-on-github-link) 
-To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions like, the name of the repo, or if it should be public the repository is created.
+To create a repo on GitHub you click on the top right '+' and then 'New repository'. After answering some questions,  for example what you want to name the repo, or if it should be public, the repository is created.
 
 ### Creating a repo locally [🔗](https://howtogit.info/#creating-a-repo-locally-link)
 To create a git repo locally navigate to the folder you want to create the repo in then run
@@ -63,7 +63,7 @@ Host github.com
 Now you should be good to go. If you need more information then you can follow [this link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 ### How do I use git? [🔗](https://howtogit.info/#how-do-i-use-git-link)
-To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change in it is tracked by git. You can see the changes with:
+To use git you first need to create a repo. All of the stuff that follows in this section are done in the repo with the terminal but you can also use the git interface of your editor or IDE. After creating the repo each change you make in the files is tracked by git. You can see the changes with:
 ```bash
 git status
 ```
@@ -119,7 +119,7 @@ git branch -a # List remote and local branches
 Branches can also be merged together. Merging branches can be a bit confusing. For this see [merging branches](https://howtogit.info/#merging-branches-link).
 
 ### Merging branches [🔗](https://howtogit.info/#merging-branches-link)
-When merging branches git tries its best to merge the two branches together, but sometimes it just doens't know how to handle some merging. To merge a branch you will use:
+When merging branches git tries its best to merge the two branches together, but sometimes it just doesn't know how to handle some merging. To merge a branch you will use:
 ```bash
 git merge some_branch_name # Merge some_branch_name into current branch
 ```
