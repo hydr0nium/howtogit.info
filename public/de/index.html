@@ -72,7 +72,7 @@
 <h3 id="was-sind-repositories-link">Was sind repositories? <a href="https://howtogit.info/de/#was-sind-repositories-link">🔗</a></h3>
 <p>Ein repository, kurz repo, (deutsch: Lagerstätte oder Behälter) ist kurz und knapp nur ein Ordner in welchem deine Dateien verarbeitet werden. Du kannst dir das ganze als eine Box vorstellen wo deine Dateien drin 'leben'. Ein repo hat immer einen .git Ordner in sich.</p>
 <h3 id="wie-erstelle-ich-ein-repo-link">Wie erstelle ich ein repo? <a href="https://howtogit.info/de/#wie-erstelle-ich-ein-repo-link">🔗</a></h3>
-<p>Es gibt zwei Wege um ein git repo zu erstellen. Entweder auf GitHub / GitLab oder lokal. In beiden Fällen musst du beiden verknüfen, falls du den Dienste von GitHub / GitLab benutzen willst.</p>
+<p>Es gibt zwei Wege um ein git repo zu erstellen. Entweder auf GitHub / GitLab oder lokal. In beiden Fällen musst du beide verknüfen, falls du den Dienst von GitHub / GitLab benutzen willst.</p>
 <h3 id="ein-repo-auf-github-erstellen-link">Ein Repo auf GitHub erstellen <a href="https://howtogit.info/de/#ein-repo-auf-github-erstellen-link">🔗</a></h3>
 <p>Um ein repo auf GitHub zu erstellen klickst du auf das '+' oben rechts und dann 'New repository'. Danach stellt GitHub dir einige Fragen wie zum Beispiel den Namen des repos oder ob dies öffentlich erreichbar sein soll.</p>
 <h3 id="wie-erstelle-ich-ein-lokales-repo-link">Wie erstelle ich ein lokales Repo? <a href="https://howtogit.info/de/#wie-erstelle-ich-ein-lokales-repo-link">🔗</a></h3>
@@ -81,10 +81,55 @@
 </span></code></pre>
 <h3 id="wie-lade-ich-ein-repo-von-github-gitlab-herunter-link">Wie lade ich ein repo von GitHub / GitLab herunter? <a href="https://howtogit.info/de/#wie-lade-ich-ein-repo-von-github-gitlab-herunter-link">🔗</a></h3>
 <p>Du kannst ein repo von GitHub oder Gitlab ganz einfache mit dem clone Kommando herunterladen. Dies verbindet automatische deine lokale 'Kopie' mit der auf GitHub / GitLab gespeicherten. Um den clone Befehl ausführen zu können benötigtst du eine repo URL. Diese findest du auf GitHub in dem jeweiligen Repo bei dem blauen Knopf 'Code'. Du kannst hier SHH oder HTTPS auswählen. Bedenke jedoch, dass SSH einen SSH-Schlüssel benötigt und HTTPS nur lesen und nicht schreiben kann.</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/someuser/somerepo.git
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> clone https://github.com/someuser/somerepo.git </span><span style="color:#65737e;"># Läd ein repo herunter
 </span></code></pre>
 <h3 id="wie-verbinde-ich-mein-lokales-repo-mit-dem-repo-auf-github-link">Wie verbinde ich mein lokales Repo mit dem Repo auf GitHub? <a href="https://howtogit.info/de/#wie-verbinde-ich-mein-lokales-repo-mit-dem-repo-auf-github-link">🔗</a></h3>
 <p>Wenn du ein zuerst ein lokales repo und danach ein repo auf GitHub erstellst musst du diese beiden verbinden. Dein GitHub / GitLab repo sollte dir genaue Anweisungen nach erstellen geben um dies zu tun. Falls du jedoch mehr Informationen benötigst kannst du <a href="https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link">diesem</a> Link folgen.</p>
+<h3 id="wie-benutze-ich-einen-ssh-schlussel-link">Wie benutze ich einen SSH Schlüssel? <a href="https://howtogit.info/de/#wie-benutze-ich-einen-ssh-schl%C3%BCssel-link">🔗</a></h3>
+<p>Ein SSH Schlüssel ist eine Möglichkeit den Servern von GitHub oder GitLab zu beweisen wer du bist. Dies benutzt eine kryptographische Methode welche man asymmetrische Kryptographie bzw "Public-Key-Kryptographie" nennt. Du Benutzung der public keys (öffentliche Schlüssel) ist unterschiedlich auf jeder Seite und wird hier am Beispiel von GitHub erklärt.</p>
+<p>Um den SSH Schlüssel zu erstellen musst du zuerst in deinen .ssh Ordner mit der Kommandozeile, navigieren. Falls dieser nicht existiert musst du ihn erstellen. Er befindet sich in Windows unter C:/Nutzer/deinNutzername/ und /home/deinNutzername unter Linux. Um den Schlüssel nun zu erstellen benutzt du folgenden Befehl:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">ssh-keygen </span><span style="color:#65737e;"># Erstellen des ssh Schlüssel Paars
+</span></code></pre>
+<p>Der Befehl frägt dich nun noch einige Fragen. Die erste ist der Name des Schlüsselpaars. Gib einen Namen (ohne Endung) an und drücke Enter. Du kannst dem Schlüssel auch ein Passwort geben jedoch wir benutzen hier kein Passwort. Nun sollten sich zwei neue Dateien in dem .ssh Ordner befinden. meinschlüssel (Privater Schlüssel) und meinschlüssel.pub (Öffentlicher Schlüssel).</p>
+<p>Öffne nun die .pub datei (hier: meinschlüssel.pub) und kopiere den Inhalt. Gehe nun auf GitHub, Einstellungen, SSH und GPG Schlüssel und erstelle einen neuen SSH Schlüssel. Kopiere den Inhalt in das Schlüsselfeld und gib dem Eintrag einen Namen. Danach erstelle den Eintrag. Dies sollte deinen öffentlichen Schlüssel zu GitHub hinzugefügt haben.</p>
+<p>Als letztes müssen wir eine ssh config für GitHub erstellen. Hierzu erstellen wir wieder im .ssh Ordner die Datei 'config' (ohne Endung). Nun musst du folgenden Inhalt hinzufügen:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">Host</span><span> github.com
+</span><span>    </span><span style="color:#bf616a;">HostName</span><span> github.com
+</span><span>    </span><span style="color:#bf616a;">User</span><span> git
+</span><span>    </span><span style="color:#bf616a;">IdentityFile</span><span> pfad_zur_pub_datei
+</span><span>    </span><span style="color:#bf616a;">IdentitiesOnly</span><span> yes
+</span></code></pre>
+<p>Nun sollte alles für die SSH Authentifizierung bei GitHub fertig sein. Solltest du jedoch immer noch Hilfe brauchen findest du diese <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">hier</a>.</p>
+<h3 id="wie-benutze-ich-git-link">Wie benutze ich git? <a href="https://howtogit.info/de/#wie-benutze-ich-git-link">🔗</a></h3>
+<p>Um git zu benutzen musst du als aller erstes ein Repo erstellen. Alles was von hier an folgt, erfolgt in dem erstellten Repo in der Kommandozeile, kann jedoch auch über etwaige git Schnittstellen in Texteditoren oder IDEs benutzer werden. Nachdem du das Repo erstellt hast wird jede Änderung an Dateien von git überwacht. Du kannst die Änderungen mit folgendem Befehl sehen:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> status </span><span style="color:#65737e;"># Zeigt die Änderungen im Repo an
+</span></code></pre>
+<p>Dies zeigt dir wie, von wem und welche Dateien geändert wurden. Um die Änderungen zu speichern musst du diese erst in den Staging (szs. Sammlung) Bereich überführen. Diese kann in zwei Wegen passieren:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> add pfad_datei1 pfad_datei2 pfad_datei3 </span><span style="color:#65737e;"># Das fügt alle angegebenen Dateien in den Staging Bereich ein.
+</span></code></pre>
+<p>oder</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> add . </span><span style="color:#65737e;"># Fügt alle Änderungen in den Staging Bereich ein
+</span></code></pre>
+<p>Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen <a href="https://howtogit.info/de/#was-ist-ein-branch">Branch</a> (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> commit</span><span style="color:#bf616a;"> -m </span><span>&quot;</span><span style="color:#a3be8c;">Das hier ist eine Commit Nachricht</span><span>&quot; </span><span style="color:#65737e;"># Commited die Änderungen zum jetztigen Branch
+</span></code></pre>
+<p>Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines hinzugefügt hast:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> push </span><span style="color:#65737e;"># Sendet die Änderung zum online Repo
+</span></code></pre>
+<p>Möglicherweise müsst du einige Konfigurationen zu deinem git hinzufügen bevor du 'pushen' kannst. Git benötigt standartmäßig einen Namen und eine Email. Für mehr Informationen zum setzen der Konfiguration siehe <a href="https://howtogit.info/de/todo">diesen</a> Absatz.</p>
+<p>Falls du mit mehreren Menschen an einem Projekt arbeitest kann es passieren, dass einige von ihnen 'pushen' und dir somit Änderungen fehlen. Um die Änderungen mit deinem lokalen Repo zu synchronisieren benutzt du einen 'pull':</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> pull </span><span style="color:#65737e;"># Läd die Änderungen vom online Repo herunter
+</span></code></pre>
+<p>Dies kann zu einem 'merge conflict' (szs. Zusammenfügungsfehler). Du kannst mehr über merge conflicts <a href="https://howtogit.info/de/todo">hier</a> finden.</p>
+<p>Der empfohlene Ablauf mit git ist der folgende:</p>
+<ol>
+<li>Lade die Änderungen mit 'pull' herunter</li>
+<li>Füge Änderungen hinzu</li>
+<li>Benutze 'add' und 'commit' um deine Änderungen regelmäßig zu speichern</li>
+<li>Lade die Änderungen mit 'push' hoch</li>
+<li>Löse merge conflict falls welche entstehen.</li>
+</ol>
+<h3 id="was-ist-eine-branch-link">Was ist eine Branch? <a href="https://howtogit.info/de/#was-ist-ein-branch">🔗</a></h3>
 
 
     

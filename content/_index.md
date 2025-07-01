@@ -51,7 +51,7 @@ This will ask you some questions. The first being the name of the key. Give it s
 
 Now open the somename.pub file and copy its content. You now need to go to GitHub, Settings, SSH and GPG Keys, New SSH key, then paste your key into the key field and give it a name. Click Add SSH key. This will add your public key to GitHub.
 
-Lastly you need to setup the ssh config for git to work. For this create a config file (no extension) in your .ssh folder we entered previously. Add the following lines:
+Lastly you need to setup the ssh config for git to work. For this create a config file (named 'config', no extension) in your .ssh folder we entered previously. Add the following lines:
 ```bash
 Host github.com
     HostName github.com

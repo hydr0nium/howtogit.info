@@ -20,7 +20,7 @@ Ein repository, kurz repo, (deutsch: Lagerstätte oder Behälter) ist kurz und k
 
 ### Wie erstelle ich ein repo? [🔗](https://howtogit.info/de/#wie-erstelle-ich-ein-repo-link)
 
-Es gibt zwei Wege um ein git repo zu erstellen. Entweder auf GitHub / GitLab oder lokal. In beiden Fällen musst du beiden verknüfen, falls du den Dienste von GitHub / GitLab benutzen willst.
+Es gibt zwei Wege um ein git repo zu erstellen. Entweder auf GitHub / GitLab oder lokal. In beiden Fällen musst du beide verknüfen, falls du den Dienst von GitHub / GitLab benutzen willst.
 
 ### Ein Repo auf GitHub erstellen [🔗](https://howtogit.info/de/#ein-repo-auf-github-erstellen-link)
 
@@ -37,11 +37,75 @@ git init .
 
 Du kannst ein repo von GitHub oder Gitlab ganz einfache mit dem clone Kommando herunterladen. Dies verbindet automatische deine lokale 'Kopie' mit der auf GitHub / GitLab gespeicherten. Um den clone Befehl ausführen zu können benötigtst du eine repo URL. Diese findest du auf GitHub in dem jeweiligen Repo bei dem blauen Knopf 'Code'. Du kannst hier SHH oder HTTPS auswählen. Bedenke jedoch, dass SSH einen SSH-Schlüssel benötigt und HTTPS nur lesen und nicht schreiben kann. 
 ```bash
-git clone https://github.com/someuser/somerepo.git
+git clone https://github.com/someuser/somerepo.git # Läd ein repo herunter
 ```
 
 ### Wie verbinde ich mein lokales Repo mit dem Repo auf GitHub? [🔗](https://howtogit.info/de/#wie-verbinde-ich-mein-lokales-repo-mit-dem-repo-auf-github-link)
 
 Wenn du ein zuerst ein lokales repo und danach ein repo auf GitHub erstellst musst du diese beiden verbinden. Dein GitHub / GitLab repo sollte dir genaue Anweisungen nach erstellen geben um dies zu tun. Falls du jedoch mehr Informationen benötigst kannst du [diesem](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories-link) Link folgen.
+
+### Wie benutze ich einen SSH Schlüssel? [🔗](https://howtogit.info/de/#wie-benutze-ich-einen-ssh-schlüssel-link)
+
+Ein SSH Schlüssel ist eine Möglichkeit den Servern von GitHub oder GitLab zu beweisen wer du bist. Dies benutzt eine kryptographische Methode welche man asymmetrische Kryptographie bzw "Public-Key-Kryptographie" nennt. Du Benutzung der public keys (öffentliche Schlüssel) ist unterschiedlich auf jeder Seite und wird hier am Beispiel von GitHub erklärt.
+
+Um den SSH Schlüssel zu erstellen musst du zuerst in deinen .ssh Ordner mit der Kommandozeile, navigieren. Falls dieser nicht existiert musst du ihn erstellen. Er befindet sich in Windows unter C:/Nutzer/deinNutzername/ und /home/deinNutzername unter Linux. Um den Schlüssel nun zu erstellen benutzt du folgenden Befehl:
+```bash
+ssh-keygen # Erstellen des ssh Schlüssel Paars
+```
+Der Befehl frägt dich nun noch einige Fragen. Die erste ist der Name des Schlüsselpaars. Gib einen Namen (ohne Endung) an und drücke Enter. Du kannst dem Schlüssel auch ein Passwort geben jedoch wir benutzen hier kein Passwort. Nun sollten sich zwei neue Dateien in dem .ssh Ordner befinden. meinschlüssel (Privater Schlüssel) und meinschlüssel.pub (Öffentlicher Schlüssel).
+
+
+Öffne nun die .pub datei (hier: meinschlüssel.pub) und kopiere den Inhalt. Gehe nun auf GitHub, Einstellungen, SSH und GPG Schlüssel und erstelle einen neuen SSH Schlüssel. Kopiere den Inhalt in das Schlüsselfeld und gib dem Eintrag einen Namen. Danach erstelle den Eintrag. Dies sollte deinen öffentlichen Schlüssel zu GitHub hinzugefügt haben.
+
+
+Als letztes müssen wir eine ssh config für GitHub erstellen. Hierzu erstellen wir wieder im .ssh Ordner die Datei 'config' (ohne Endung). Nun musst du folgenden Inhalt hinzufügen:
+```bash
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile pfad_zur_pub_datei
+    IdentitiesOnly yes
+```
+Nun sollte alles für die SSH Authentifizierung bei GitHub fertig sein. Solltest du jedoch immer noch Hilfe brauchen findest du diese [hier](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+
+### Wie benutze ich git? [🔗](https://howtogit.info/de/#wie-benutze-ich-git-link)
+
+Um git zu benutzen musst du als aller erstes ein Repo erstellen. Alles was von hier an folgt, erfolgt in dem erstellten Repo in der Kommandozeile, kann jedoch auch über etwaige git Schnittstellen in Texteditoren oder IDEs benutzer werden. Nachdem du das Repo erstellt hast wird jede Änderung an Dateien von git überwacht. Du kannst die Änderungen mit folgendem Befehl sehen:
+```bash
+git status # Zeigt die Änderungen im Repo an
+```
+Dies zeigt dir wie, von wem und welche Dateien geändert wurden. Um die Änderungen zu speichern musst du diese erst in den Staging (szs. Sammlung) Bereich überführen. Diese kann in zwei Wegen passieren:
+```bash
+git add pfad_datei1 pfad_datei2 pfad_datei3 # Das fügt alle angegebenen Dateien in den Staging Bereich ein.
+```
+oder 
+```bash
+git add . # Fügt alle Änderungen in den Staging Bereich ein
+```
+Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen [Branch](https://howtogit.info/de/#was-ist-ein-branch) (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:
+```bash
+git commit -m "Das hier ist eine Commit Nachricht" # Commited die Änderungen zum jetztigen Branch
+```
+Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines hinzugefügt hast:
+```bash
+git push # Sendet die Änderung zum online Repo
+```
+Möglicherweise müsst du einige Konfigurationen zu deinem git hinzufügen bevor du 'pushen' kannst. Git benötigt standartmäßig einen Namen und eine Email. Für mehr Informationen zum setzen der Konfiguration siehe [diesen](todo) Absatz.
+
+
+Falls du mit mehreren Menschen an einem Projekt arbeitest kann es passieren, dass einige von ihnen 'pushen' und dir somit Änderungen fehlen. Um die Änderungen mit deinem lokalen Repo zu synchronisieren benutzt du einen 'pull':
+```bash
+git pull # Läd die Änderungen vom online Repo herunter
+```
+Dies kann zu einem 'merge conflict' (szs. Zusammenfügungsfehler). Du kannst mehr über merge conflicts [hier](todo) finden.
+
+Der empfohlene Ablauf mit git ist der folgende:
+1. Lade die Änderungen mit 'pull' herunter
+2. Füge Änderungen hinzu
+3. Benutze 'add' und 'commit' um deine Änderungen regelmäßig zu speichern
+4. Lade die Änderungen mit 'push' hoch
+5. Löse merge conflict falls welche entstehen.
+
+### Was ist eine Branch? [🔗](https://howtogit.info/de/#was-ist-ein-branch)
 
 
