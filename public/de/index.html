@@ -110,10 +110,11 @@
 <p>oder</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> add . </span><span style="color:#65737e;"># Fügt alle Änderungen in den Staging Bereich ein
 </span></code></pre>
-<p>Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen <a href="https://howtogit.info/de/#was-ist-ein-branch">Branch</a> (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:</p>
+<p>Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen <a href="https://howtogit.info/de/#was-ist-ein-branch-link">Branch</a> (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> commit</span><span style="color:#bf616a;"> -m </span><span>&quot;</span><span style="color:#a3be8c;">Das hier ist eine Commit Nachricht</span><span>&quot; </span><span style="color:#65737e;"># Commited die Änderungen zum jetztigen Branch
 </span></code></pre>
-<p>Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines hinzugefügt hast:</p>
+<p><mark> WICHTIG: Jeder mit Zugriff auf ein Repo kann ALLE commits, inklusive commit Nachricht sehen. </mark>
+Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines hinzugefügt hast:</p>
 <pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> push </span><span style="color:#65737e;"># Sendet die Änderung zum online Repo
 </span></code></pre>
 <p>Möglicherweise müsst du einige Konfigurationen zu deinem git hinzufügen bevor du 'pushen' kannst. Git benötigt standartmäßig einen Namen und eine Email. Für mehr Informationen zum setzen der Konfiguration siehe <a href="https://howtogit.info/de/todo">diesen</a> Absatz.</p>
@@ -129,7 +130,33 @@
 <li>Lade die Änderungen mit 'push' hoch</li>
 <li>Löse merge conflict falls welche entstehen.</li>
 </ol>
-<h3 id="was-ist-eine-branch-link">Was ist eine Branch? <a href="https://howtogit.info/de/#was-ist-ein-branch">🔗</a></h3>
+<h3 id="was-ist-eine-branch-link">Was ist eine Branch? <a href="https://howtogit.info/de/#was-ist-ein-branch-link">🔗</a></h3>
+<p>Ein Branch (bzw. Pfad oder Zweig) ist wie eine andere Zeitline für deine Dateien. Wenn du einen Branch erstellst wird deine aktuelle 'Zeitlinie' in zwei geteilt. Von diesem Zeitpunkt an kannst du wählen auf welchen der zwei Pfade du weiter arbeitest. Um einen neuen Branch zu erstellen benutzt du folgenden Befehl:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> checkout</span><span style="color:#bf616a;"> -b</span><span> neuer_branch_name </span><span style="color:#65737e;"># Erstelle einen neuen Branch
+</span></code></pre>
+<p>Du kannst außerdem Branches, mit diesem Befehl, wechseln:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> branch </span><span style="color:#65737e;"># Listet alle lokalen Branches auf
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -r </span><span style="color:#65737e;"># Listet alle online Branches auf
+</span><span style="color:#bf616a;">git</span><span> branch</span><span style="color:#bf616a;"> -a </span><span style="color:#65737e;"># Listet alle Branches online und lokal auf
+</span></code></pre>
+<p>Branches können außerdem gemerged (zusammengeführt) werden. Das Mergen von Branches kann etwas verwirrent wirken. Für mehr über das Mergen von Branches kannst du <a href="https://howtogit.info/de/#merging-branches-link">hier</a> klicken.</p>
+<h3 id="merging-branches-link">Merging Branches <a href="https://howtogit.info/de/#merging-branches-link">🔗</a></h3>
+<p>Wenn Branches gemerged (zusammengeführt) werden versucht git den bestmöglichen Weg um Konflikte automatisch zu lösen. Jedoch scheitert auch git manchmal und so muss von menschlicher Hand der Konflikt gelöst werden. Um zwei Branches zu mergen benutzt du diesen Befehl:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> merge ein_branch_name </span><span style="color:#65737e;"># Merged ein_branch_name in den jetztigen Branch
+</span></code></pre>
+<p>Das Mergen von Branches kann wie oben besprochen zu sogenannten 'Merge Konflikten' führen. Diese Merge Konflikte siehen wie folgt aus:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span><span>Ich hasse git.
+</span><span>=======
+</span><span>Ich liebe git.
+</span><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; mein_super_branch
+</span></code></pre>
+<p>Dies zeigt dir die jetzige 'Änderung' (HEAD - 'Ich hasse git.') und was die zu mergende Änderung (mein_super_branch - "Ich liebe git.") ist. Um einen Merge Konflikt zu lösen wählst du dir einen der beiden Änderungen aus und entfernst die andere, sowie alle Konflikt Markierungen.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Ich liebe git.
+</span></code></pre>
+<p>Nachdem alle Merge Konflikte gelöst sind, musst du die Änderungen wieder adden, committen und pushen.</p>
+<p>Viele Merge Konflikte von Hand zu bearbeiten wird schnell eine Aufgabe des Unmöglichen, somit ist das Benutzen von einer guten IDE oder eines Codeeditor bei so etwas empfohlen. Merge Konflikte sind ein großes Thema in git und dies ist nur die Spitze des Eisberges. Falls du mehr Hilfe mit merge conflicts benötigt empfiehlt es sich <a href="https://git-scm.com/book/ms/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts">die git Dokumentation</a> zu lesen.</p>
+<h3 id="git-konfigurieren-link">Git Konfigurieren <a href="https://howtogit.info/de/#git-konfigurieren-link">🔗</a></h3>
 
 
     

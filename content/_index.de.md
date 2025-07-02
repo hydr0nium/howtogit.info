@@ -82,10 +82,12 @@ oder
 ```bash
 git add . # Fügt alle Änderungen in den Staging Bereich ein
 ```
-Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen [Branch](https://howtogit.info/de/#was-ist-ein-branch) (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:
+Nun da alle gewünschten Dateien im Staging Bereich sind müssen diese committed (szs. gebunden, festgeschrieben) werden. Committing bedeutet, dass die jeweiligen Änderung an den jetzigen [Branch](https://howtogit.info/de/#was-ist-ein-branch-link) (Zweig) hinzugefügt werden. Beim Erstellen eines Commits müss außerdem eine Commit Nachricht angegeben werden:
 ```bash
 git commit -m "Das hier ist eine Commit Nachricht" # Commited die Änderungen zum jetztigen Branch
 ```
+
+<mark> WICHTIG: Jeder mit Zugriff auf ein Repo kann ALLE commits, inklusive commit Nachricht sehen. </mark>
 Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines hinzugefügt hast:
 ```bash
 git push # Sendet die Änderung zum online Repo
@@ -106,6 +108,48 @@ Der empfohlene Ablauf mit git ist der folgende:
 4. Lade die Änderungen mit 'push' hoch
 5. Löse merge conflict falls welche entstehen.
 
-### Was ist eine Branch? [🔗](https://howtogit.info/de/#was-ist-ein-branch)
+### Was ist eine Branch? [🔗](https://howtogit.info/de/#was-ist-ein-branch-link)
+
+Ein Branch (bzw. Pfad oder Zweig) ist wie eine andere Zeitline für deine Dateien. Wenn du einen Branch erstellst wird deine aktuelle 'Zeitlinie' in zwei geteilt. Von diesem Zeitpunkt an kannst du wählen auf welchen der zwei Pfade du weiter arbeitest. Um einen neuen Branch zu erstellen benutzt du folgenden Befehl:
+```bash
+git checkout -b neuer_branch_name # Erstelle einen neuen Branch
+```
+Du kannst außerdem Branches, mit diesem Befehl, wechseln:
+```bash
+git branch # Listet alle lokalen Branches auf
+git branch -r # Listet alle online Branches auf
+git branch -a # Listet alle Branches online und lokal auf
+```
+
+Branches können außerdem gemerged (zusammengeführt) werden. Das Mergen von Branches kann etwas verwirrent wirken. Für mehr über das Mergen von Branches kannst du [hier](https://howtogit.info/de/#merging-branches-link) klicken.
+
+### Merging Branches [🔗](https://howtogit.info/de/#merging-branches-link)
+
+Wenn Branches gemerged (zusammengeführt) werden versucht git den bestmöglichen Weg um Konflikte automatisch zu lösen. Jedoch scheitert auch git manchmal und so muss von menschlicher Hand der Konflikt gelöst werden. Um zwei Branches zu mergen benutzt du diesen Befehl:
+```bash
+git merge ein_branch_name # Merged ein_branch_name in den jetztigen Branch
+```
+
+Das Mergen von Branches kann wie oben besprochen zu sogenannten 'Merge Konflikten' führen. Diese Merge Konflikte siehen wie folgt aus:
+```
+<<<<<<< HEAD
+Ich hasse git.
+=======
+Ich liebe git.
+>>>>>>> mein_super_branch
+```
+Dies zeigt dir die jetzige 'Änderung' (HEAD - 'Ich hasse git.') und was die zu mergende Änderung (mein_super_branch - "Ich liebe git.") ist. Um einen Merge Konflikt zu lösen wählst du dir einen der beiden Änderungen aus und entfernst die andere, sowie alle Konflikt Markierungen.
+```
+Ich liebe git.
+```
+
+Nachdem alle Merge Konflikte gelöst sind, musst du die Änderungen wieder adden, committen und pushen.
+
+
+Viele Merge Konflikte von Hand zu bearbeiten wird schnell eine Aufgabe des Unmöglichen, somit ist das Benutzen von einer guten IDE oder eines Codeeditor bei so etwas empfohlen. Merge Konflikte sind ein großes Thema in git und dies ist nur die Spitze des Eisberges. Falls du mehr Hilfe mit merge conflicts benötigt empfiehlt es sich [die git Dokumentation](https://git-scm.com/book/ms/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts) zu lesen.
+
+### Git Konfigurieren [🔗](https://howtogit.info/de/#git-konfigurieren-link) 
+
+
 
 
