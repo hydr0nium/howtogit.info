@@ -157,6 +157,56 @@ Jetzt können die Änderungen zum online Repo geschickt werden, sofern du eines 
 <p>Nachdem alle Merge Konflikte gelöst sind, musst du die Änderungen wieder adden, committen und pushen.</p>
 <p>Viele Merge Konflikte von Hand zu bearbeiten wird schnell eine Aufgabe des Unmöglichen, somit ist das Benutzen von einer guten IDE oder eines Codeeditor bei so etwas empfohlen. Merge Konflikte sind ein großes Thema in git und dies ist nur die Spitze des Eisberges. Falls du mehr Hilfe mit merge conflicts benötigt empfiehlt es sich <a href="https://git-scm.com/book/ms/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts">die git Dokumentation</a> zu lesen.</p>
 <h3 id="git-konfigurieren-link">Git Konfigurieren <a href="https://howtogit.info/de/#git-konfigurieren-link">🔗</a></h3>
+<p>Git kann konfiguriert werden um viele verschiedene Dinge zu machen. Du kannst zum Beispiel deine eigenen git commands hinzufügen. Du weitverbreiteste Konfigurations um welche Leute sich kümmern müssen, ist die der Konfiguration von Name und Email, da git diese zum benutzen eines online Repos benötigt. Um einen Namen und eine Email zu einem Repo hinzuzufügen, kannst du folgendes (im Repo) benutzen:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config user.name &quot;</span><span style="color:#a3be8c;">Mein Name</span><span>&quot; </span><span style="color:#65737e;"># Setzt einen Name für ein Repo
+</span><span style="color:#bf616a;">git</span><span> config user.email &quot;</span><span style="color:#a3be8c;">meine_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Setzt eine Email für ein Repo
+</span></code></pre>
+<p>Du kannst dies auch global für alle lokalen Repos auf deinem System machen:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.name &quot;</span><span style="color:#a3be8c;">Mein Name</span><span>&quot; </span><span style="color:#65737e;"># Setzt den Namen für alle lokallen Repos
+</span><span style="color:#bf616a;">git</span><span> config</span><span style="color:#bf616a;"> --global</span><span> user.email &quot;</span><span style="color:#a3be8c;">meine_email@howtogit.info</span><span>&quot; </span><span style="color:#65737e;"># Setzt eine Email für alle lokalen Repos
+</span></code></pre>
+<p><mark> WICHTIG: JEder mit Zugriff auf ein Repo kann die konfigurierte Email und den Namen sehen. </mark></p>
+<p>Git kann außerdem noch viel viel mehr konfigurieren mit einer .gitconfig. Hier ist als Beispiel meine:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">[init]
+</span><span>	</span><span style="color:#bf616a;">defaultBranch</span><span> = main
+</span><span style="color:#bf616a;">[status]
+</span><span>	</span><span style="color:#bf616a;">short</span><span> = false
+</span><span style="color:#bf616a;">[user]
+</span><span>	</span><span style="color:#bf616a;">email</span><span> = 37932436+hydr0nium@users.noreply.github.com 
+</span><span>	</span><span style="color:#bf616a;">name</span><span> = hydr0nium
+</span><span style="color:#bf616a;">[merge]
+</span><span>	</span><span style="color:#bf616a;">tool</span><span> = nvimdiff2
+</span><span style="color:#bf616a;">[push]
+</span><span>	</span><span style="color:#bf616a;">autoSetupRemote</span><span> = true
+</span><span style="color:#bf616a;">[mergetool]
+</span><span>	</span><span style="color:#bf616a;">keepBackup</span><span> = false
+</span><span style="color:#bf616a;">[gpg]
+</span><span>	</span><span style="color:#bf616a;">mode</span><span> = ssh
+</span><span>	</span><span style="color:#bf616a;">format</span><span> = ssh
+</span><span style="color:#bf616a;">[filter </span><span>&quot;</span><span style="color:#a3be8c;">lfs</span><span>&quot;]
+</span><span>	</span><span style="color:#bf616a;">clean</span><span> = git-lfs clean -- %</span><span style="color:#bf616a;">f
+</span><span>	</span><span style="color:#bf616a;">smudge</span><span> = git-lfs smudge -- %</span><span style="color:#bf616a;">f
+</span><span>	</span><span style="color:#bf616a;">process</span><span> = git-lfs filter-process
+</span><span>	</span><span style="color:#bf616a;">required</span><span> = true
+</span></code></pre>
+<h3 id="ich-habe-mein-repo-kaputt-gemacht-hilfe-link">Ich habe mein repo kaputt gemacht, HILFE <a href="https://howtogit.info/de/#ich-habe-mein-repo-kaputt-gemacht-hilfe-link">🔗</a></h3>
+<p>Das gute an git ist, dass es sehr schwer ist ein Repo entgültig komplett, ohne Reparaturmöglichkeit, kaputt zu machen. Als aller erstes solltest du ein Backup, von dem was du noch hast, machen. Du willst nicht noch mehr kaputt machen. Falls du keine wichtigen Änderung gemacht hast, kannst du das Repo einfach neu clonen. Das setzt das Repo nochmal zum Stand der online war zurück. Mit dem Backup kannst du auch jetzt falls nötig alle Änderungen wieder zurück einfügen. Falls du mehr Erfahrung mit git hast, kannst du außerdem einen neuen Branch erstellen, die Änderungen dort machen und den Branch dann mergen. Dies sollte 99% deiner Probleme lösen. Falls du immer noch Probleme hast ist Google und StackExchange eine gute Möglichkeit, Lösungen für dein Problem zu finden.</p>
+<h3 id="ich-habe-sensible-daten-gepushed-link">Ich habe sensible Daten gepushed ... <a href="https://howtogit.info/de/#ich-habe-sensible-daten-gepushed-link">🔗</a></h3>
+<p>Du hast also sensible Daten, wie Passwört, API Schlüssel, deine Adresse etc. gepushed? Das ist sehr schlecht, denn git macht es dir sehr schwer bestimmte Daten, bzw. Informationen in einem Repo zu löschen, ohne das andere Inhalte mit gelöscht werden. Falls du etwas gepushed hast, wie ein Passwort oder API Schlüssel solltest du diesen so schnell wie möglich ändern. Falls es jedoch Daten sind, die du nicht schnell ändern kannst, wie deine Adresse ist der beste Weg, das Repo zu löschen und ein neues zu erstellen. Die Daten (ohne .git) kannst du einfach herrüber kopieren (ohne, die sensiblen Daten). Das sollte einen neuen Commitverlauf erstellen. Es gibt noch mehr Möglichkeiten, welche jedoch gute git Kenntnisse erfordern. <a href="https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github">StackOverflow - How to remove a commit from GitHub</a></p>
+<h3 id="pull-requests-link">Pull Requests <a href="https://howtogit.info/de/#pull-requests-link">🔗</a></h3>
+<p>Pull requests hören sich ähnlich wie pullen an sind aber zwei verschiedene Dinge. Eine pull requests ist keine git, sondern eine GitHub / GitLab etc. Funktion. Wenn du eine öffentliches Repo besuchst kannst du dieses 'forken'. Das bedeutet du kopierst, das Repo sodass du daran arbeiten kannst wie als wenn es deines wäre. Du kannst nun Änderungen vornehmen und "fragen" ob diese in das Original Repo germerged werden. Dies erlaubt es einfach zusammen zu arbeiten und Funktionen zu öffentlichen Repos hinzuzufügen, solange diese vom Besitzer angenommen werden. Pull requests müssen jedoch nicht durch forks entstehen. Bei der Zusammenarbeit an großen Projekten kann es passieren, dass du immer ienen neuen Branch pro Funktion erstellst und dieser mit einer Pull Request gemerged werden muss.</p>
+<p><mark> Es ist allgemein eine gute Idee auf "Feature / Funktions Branches" zu arbeiten und diese, egal ob man pull requests benutzt oder nicht zu mergen. </mark></p>
+<h3 id="mehr-informationen-link">Mehr Informationen <a href="https://howtogit.info/de/#mehr-information-link">🔗</a></h3>
+<p>Für mehr Informationen über das Thema, kannst du dir diese Quellen anschauen:</p>
+<ul>
+<li><a href="https://git-scm.com/docs">Git Documentation</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Git Book (Online/Free)</a></li>
+<li><a href="https://docs.github.com/en">GitHub Documentation</a></li>
+<li><a href="https://docs.gitlab.com">GitLab Documentation</a></li>
+</ul>
+<h3 id="uber-mich-mitwirken-link">Über mich &amp; Mitwirken <a href="https://howtogit.info/de/#%C3%BCber-mich-mitwirken-link">🔗</a></h3>
+<p>Falls dir gefällt was du hier liest dann schau dir doch meinen anderen Kram auf <a href="https://github.com/hydr0nium">GitHub</a> oder <a href="https://infosec.exchange/@hydr0nium">Mastodon</a> an.</p>
+<p>Falls du der Seite mehr zugänglich machen willst, kannst du helfen und diese mit Übersetzungen füllen. Um das zu tun gehe auf das <a href="https://github.com/hydr0nium/howtogit.info">GitHub Repo</a>, forke es und übersetze die _index.md im content Ordner. Du kannst dir eine Beispiel an den anderen Dateien dort nehmen wie zum Beispiel _index.de.md. Ich bin mir sicher du findest heraus wie es geht :)</p>
 
 
     

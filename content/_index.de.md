@@ -150,6 +150,69 @@ Viele Merge Konflikte von Hand zu bearbeiten wird schnell eine Aufgabe des Unmö
 
 ### Git Konfigurieren [🔗](https://howtogit.info/de/#git-konfigurieren-link) 
 
+Git kann konfiguriert werden um viele verschiedene Dinge zu machen. Du kannst zum Beispiel deine eigenen git commands hinzufügen. Du weitverbreiteste Konfigurations um welche Leute sich kümmern müssen, ist die der Konfiguration von Name und Email, da git diese zum benutzen eines online Repos benötigt. Um einen Namen und eine Email zu einem Repo hinzuzufügen, kannst du folgendes (im Repo) benutzen:
+```bash
+git config user.name "Mein Name" # Setzt einen Name für ein Repo
+git config user.email "meine_email@howtogit.info" # Setzt eine Email für ein Repo
+```
+Du kannst dies auch global für alle lokalen Repos auf deinem System machen:
+```bash
+git config --global user.name "Mein Name" # Setzt den Namen für alle lokallen Repos
+git config --global user.email "meine_email@howtogit.info" # Setzt eine Email für alle lokalen Repos
+```
+<mark> WICHTIG: JEder mit Zugriff auf ein Repo kann die konfigurierte Email und den Namen sehen. </mark>
 
 
+Git kann außerdem noch viel viel mehr konfigurieren mit einer .gitconfig. Hier ist als Beispiel meine:
+```bash
+[init]
+	defaultBranch = main
+[status]
+	short = false
+[user]
+	email = 37932436+hydr0nium@users.noreply.github.com 
+	name = hydr0nium
+[merge]
+	tool = nvimdiff2
+[push]
+	autoSetupRemote = true
+[mergetool]
+	keepBackup = false
+[gpg]
+	mode = ssh
+	format = ssh
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+```
 
+### Ich habe mein repo kaputt gemacht, HILFE [🔗](https://howtogit.info/de/#ich-habe-mein-repo-kaputt-gemacht-hilfe-link)
+
+Das gute an git ist, dass es sehr schwer ist ein Repo entgültig komplett, ohne Reparaturmöglichkeit, kaputt zu machen. Als aller erstes solltest du ein Backup, von dem was du noch hast, machen. Du willst nicht noch mehr kaputt machen. Falls du keine wichtigen Änderung gemacht hast, kannst du das Repo einfach neu clonen. Das setzt das Repo nochmal zum Stand der online war zurück. Mit dem Backup kannst du auch jetzt falls nötig alle Änderungen wieder zurück einfügen. Falls du mehr Erfahrung mit git hast, kannst du außerdem einen neuen Branch erstellen, die Änderungen dort machen und den Branch dann mergen. Dies sollte 99% deiner Probleme lösen. Falls du immer noch Probleme hast ist Google und StackExchange eine gute Möglichkeit, Lösungen für dein Problem zu finden.
+
+### Ich habe sensible Daten gepushed ... [🔗](https://howtogit.info/de/#ich-habe-sensible-daten-gepushed-link)
+
+Du hast also sensible Daten, wie Passwört, API Schlüssel, deine Adresse etc. gepushed? Das ist sehr schlecht, denn git macht es dir sehr schwer bestimmte Daten, bzw. Informationen in einem Repo zu löschen, ohne das andere Inhalte mit gelöscht werden. Falls du etwas gepushed hast, wie ein Passwort oder API Schlüssel solltest du diesen so schnell wie möglich ändern. Falls es jedoch Daten sind, die du nicht schnell ändern kannst, wie deine Adresse ist der beste Weg, das Repo zu löschen und ein neues zu erstellen. Die Daten (ohne .git) kannst du einfach herrüber kopieren (ohne, die sensiblen Daten). Das sollte einen neuen Commitverlauf erstellen. Es gibt noch mehr Möglichkeiten, welche jedoch gute git Kenntnisse erfordern. [StackOverflow - How to remove a commit from GitHub](https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github)
+
+### Pull Requests [🔗](https://howtogit.info/de/#pull-requests-link)
+
+Pull requests hören sich ähnlich wie pullen an sind aber zwei verschiedene Dinge. Eine pull requests ist keine git, sondern eine GitHub / GitLab etc. Funktion. Wenn du eine öffentliches Repo besuchst kannst du dieses 'forken'. Das bedeutet du kopierst, das Repo sodass du daran arbeiten kannst wie als wenn es deines wäre. Du kannst nun Änderungen vornehmen und "fragen" ob diese in das Original Repo germerged werden. Dies erlaubt es einfach zusammen zu arbeiten und Funktionen zu öffentlichen Repos hinzuzufügen, solange diese vom Besitzer angenommen werden. Pull requests müssen jedoch nicht durch forks entstehen. Bei der Zusammenarbeit an großen Projekten kann es passieren, dass du immer ienen neuen Branch pro Funktion erstellst und dieser mit einer Pull Request gemerged werden muss.
+
+<mark> Es ist allgemein eine gute Idee auf "Feature / Funktions Branches" zu arbeiten und diese, egal ob man pull requests benutzt oder nicht zu mergen. </mark>
+
+### Mehr Informationen [🔗](https://howtogit.info/de/#mehr-information-link)
+
+Für mehr Informationen über das Thema, kannst du dir diese Quellen anschauen:
+
+- [Git Documentation](https://git-scm.com/docs)
+- [Git Book (Online/Free)](https://git-scm.com/book/en/v2)
+- [GitHub Documentation](https://docs.github.com/en)
+- [GitLab Documentation](https://docs.gitlab.com)
+
+### Über mich & Mitwirken [🔗](https://howtogit.info/de/#über-mich-mitwirken-link)
+
+Falls dir gefällt was du hier liest dann schau dir doch meinen anderen Kram auf [GitHub](https://github.com/hydr0nium) oder [Mastodon](https://infosec.exchange/@hydr0nium) an.
+
+Falls du der Seite mehr zugänglich machen willst, kannst du helfen und diese mit Übersetzungen füllen. Um das zu tun gehe auf das [GitHub Repo](https://github.com/hydr0nium/howtogit.info), forke es und übersetze die _index.md im content Ordner. Du kannst dir eine Beispiel an den anderen Dateien dort nehmen wie zum Beispiel _index.de.md. Ich bin mir sicher du findest heraus wie es geht :)
