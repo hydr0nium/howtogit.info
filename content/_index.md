@@ -202,6 +202,6 @@ For more information on the topic you can consult these sources:
 
 ### About & Contributing [🔗](https://howtogit.info/#about-contributing-link)
 
-If you enjoyed this, you can optionally buy me a coffee [here](https://ko-fi.com/hydr0nium) or checkout my other stuff at [GitHub](https://github.com/hydr0nium) and [Mastodon](https://infosec.exchange/@hydr0nium).
+If you enjoyed this, then checkout my other stuff at [GitHub](https://github.com/hydr0nium) and [Mastodon](https://infosec.exchange/@hydr0nium).
 
 You can help and make this page more accessible by adding translations to other languages. For this you can fork this [GitHub repo](https://github.com/hydr0nium/howtogit.info), add the respective file in the content folder and create a pull request. I am sure after reading this page you will know how :).
