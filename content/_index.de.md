@@ -213,6 +213,6 @@ Für mehr Informationen über das Thema, kannst du dir diese Quellen anschauen:
 
 ### Über mich & Mitwirken [🔗](https://howtogit.info/de/#über-mich-mitwirken-link)
 
-Falls dir gefällt was du hier liest dann schau dir doch meinen anderen Kram auf [GitHub](https://github.com/hydr0nium) oder [Mastodon](https://infosec.exchange/@hydr0nium) an.
+Falls dir gefällt was du hier liest, kannst du mir optional einen virutellen Kaffee kaufen: [ko-fi.com](https://ko-fi.com/hydr0nium) or dir meinen anderen Kram auf [GitHub](https://github.com/hydr0nium) oder [Mastodon](https://infosec.exchange/@hydr0nium) anschauen.
 
 Falls du der Seite mehr zugänglich machen willst, kannst du helfen und diese mit Übersetzungen füllen. Um das zu tun gehe auf das [GitHub Repo](https://github.com/hydr0nium/howtogit.info), forke es und übersetze die _index.md im content Ordner. Du kannst dir eine Beispiel an den anderen Dateien dort nehmen wie zum Beispiel _index.de.md. Ich bin mir sicher du findest heraus wie es geht :)
